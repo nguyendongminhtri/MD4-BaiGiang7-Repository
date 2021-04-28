@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Province</title>
+</head>
+<style>
+    .td{
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+</style>
+<body>
+<a href="/create">Create Province</a>
+<table border="1" class="td">
+    <tr>
+        <td>STT</td>
+        <td>Name</td>
+        <td>Detail</td>
+    </tr>
+    <tr th:each="p:${listProvince}">
+        <td th:utext="${p.id}"></td>
+        <td th:utext="${p.name}"></td>
+        <td><a th:href="@{/detail/province/{id}(id=${p.getId()})}">Detail</a> </td>
+    </tr>
+</table>
+</body>
+</html>

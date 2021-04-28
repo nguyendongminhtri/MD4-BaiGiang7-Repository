@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Province</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>STT</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+    </tr>
+    <tr th:each="c:${customerByProvince}">
+        <td th:utext="${c.getId()}"></td>
+        <td th:utext="${c.getFirstName()}"></td>
+        <td th:utext="${c.getLastName()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Province</title>
+</head>
+<style>
+    .td{
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+</style>
+<body>
+<a href="/create-customer">Create Customer</a> <br>
+<a href="/province">List Province</a>
+<table border="1" class="td">
+    <tr>
+        <td>STT</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Province</td>
+    </tr>
+    <tr th:each="c:${listCustomer}">
+        <td th:utext="${c.id}"></td>
+        <td th:utext="${c.firstName}"></td>
+        <td th:utext="${c.lastName}"></td>
+        <td th:utext="${c.province.name}"></td>
+    </tr>
+</table>
+</body>
+</html>
