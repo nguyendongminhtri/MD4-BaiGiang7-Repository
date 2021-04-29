@@ -20,9 +20,9 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-beans', version: '5.3.2'
     compile group: 'org.springframework', name: 'spring-web', version: '5.3.2'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '5.3.2'
-    //ThymeLeaf
-    compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.9.RELEASE'
-    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
+    //ThymeLeaf Spring5
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.11.RELEASE'
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.5.2'
     //Hibernate
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.0.Final'
@@ -30,6 +30,9 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
     //jpa
     compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.4.2'
+    //Validate
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
 
 }
 

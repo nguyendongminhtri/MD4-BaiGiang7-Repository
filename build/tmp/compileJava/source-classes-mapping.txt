@@ -1,26 +1,36 @@
-repository/IProvinceRepository.java
- repository.IProvinceRepository
-AppConfig.java
- AppConfig
 controller/CustomerController.java
  controller.CustomerController
-model/Customer.java
- model.Customer
-repository/ICustomerRepository.java
- repository.ICustomerRepository
+AppConfig.java
+ AppConfig
 model/Province.java
  model.Province
+model/Product.java
+ model.Product
 service/impl/CustomerServiceImpl.java
  service.impl.CustomerServiceImpl
-service/ICustomerService.java
- service.ICustomerService
-WebConfig.java
- WebConfig
+repository/IProvinceRepository.java
+ repository.IProvinceRepository
+service/IProvinceService.java
+ service.IProvinceService
+model/Customer.java
+ model.Customer
+formatter/ProvinceFormatter.java
+ formatter.ProvinceFormatter
+repository/ICustomerRepository.java
+ repository.ICustomerRepository
 service/impl/ProvinceServiceImpl.java
  service.impl.ProvinceServiceImpl
 controller/ProvinceController.java
  controller.ProvinceController
-service/IProvinceService.java
- service.IProvinceService
-formatter/ProvinceFormatter.java
- formatter.ProvinceFormatter
+service/ICustomerService.java
+ service.ICustomerService
+service/IProducService.java
+ service.IProducService
+service/impl/ProductServiceImpl.java
+ service.impl.ProductServiceImpl
+repository/IProductRepository.java
+ repository.IProductRepository
+WebConfig.java
+ WebConfig
+controller/ProductController.java
+ controller.ProductController

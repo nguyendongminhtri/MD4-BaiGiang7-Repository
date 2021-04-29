@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -17,12 +18,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 import service.IProvinceService;
 import service.impl.CustomerServiceImpl;
+import service.impl.ProductServiceImpl;
 import service.impl.ProvinceServiceImpl;
 
 import javax.persistence.EntityManager;
@@ -33,6 +35,7 @@ import java.util.Properties;
 @Configuration
 @ComponentScan("controller")
 @EnableJpaRepositories("repository")
+@EnableSpringDataWebSupport
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
     @Override
@@ -51,8 +54,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     }
 
     @Bean
-    TemplateEngine templateEngine() {
-        TemplateEngine templateEngine = new TemplateEngine();
+    SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
@@ -111,6 +114,10 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 @Bean
     CustomerServiceImpl customerService(){
         return new CustomerServiceImpl();
+}
+@Bean
+    ProductServiceImpl productService(){
+        return new ProductServiceImpl();
 }
 @Bean
     ProvinceServiceImpl provinceService(){

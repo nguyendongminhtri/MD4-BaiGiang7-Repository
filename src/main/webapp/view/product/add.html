@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+<form action="/create/product" method="post" th:object="${createProductForm}">
+    <label>Name</label>
+    <input type="text" name="name" th:field="*{name}"><br>
+    <span style="color: red" th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name Error</span>
+    <label>Age</label>
+    <input type="text" name="age" th:field="*{age}"><br>
+    <span style="color: red." th:if="${#fields.hasErrors('age')}" th:error="*{age}">Age Error</span>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
